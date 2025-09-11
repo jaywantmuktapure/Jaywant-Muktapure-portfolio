@@ -1,0 +1,461 @@
+<!doctype html>
+<!--
+  Portfolio - Single file HTML (Tailwind CSS via CDN)
+  - Replace images: profile.jpg, project1.png, project2.png, project3.png
+  - Replace resume.pdf with your actual resume file in the same folder
+  - Deploy: Push this file to GitHub Pages / Vercel / Netlify
+-->
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jaywant Muktapure — Portfolio</title>
+
+    <!-- Tailwind CDN (play) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      /* Tailwind config for custom colors & dark mode */
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              brand: '#0ea5a4',
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <style>
+      /* small custom css for progress bars and scrollbar */
+      ::-webkit-scrollbar { width: 10px; }
+      ::-webkit-scrollbar-thumb { background: rgba(100,116,139,0.4); border-radius: 10px; }
+      .skill-bar > div { height: 8px; border-radius: 9999px; }
+    </style>
+  </head>
+     <body class="bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 antialiased">
+
+    <!-- NAVBAR -->
+    <header class="fixed w-full bg-white/800 dark:bg-slate-900/60 backdrop-blur z-40">
+      <div class="max-w-6xl mx-auto flex items-center justify-between px-6 py-3">
+        <a href="#hero" class="flex items-center gap-3">
+          <img src="jaywant muktapure.jpg" alt="profile" class="w-10 h-10 rounded-full object-cover border-2 border-brand" />
+          <div class="text-sm">
+            <div class="font-semibold">Jaywant Muktapure.</div>
+            <div class="text-xs text-slate-500 dark:text-slate-300">Computer Engineering Student</div>
+          </div>
+        </a>
+
+        <nav class="hidden md:flex items-center gap-6 text-sm">
+          <a href="#about" class="hover:text-brand">About</a>
+          <a href="#skills" class="hover:text-brand">Skills</a>
+          <a href="#projects" class="hover:text-brand">Projects</a>
+          <a href="#experience" class="hover:text-brand">Experience</a>
+          <a href="#education" class="hover:text-brand">Education</a>
+          <a href="#contact" class="hover:text-brand">Contact</a>
+        </nav>
+
+        <div class="flex items-center gap-3">
+          <button id="themeToggle" aria-label="Toggle theme" class="p-2 rounded-md hover:bg-slate-100 dark:hover:bg-slate-300">
+            <i id="themeIcon" class="fa-solid fa-moon"></i>
+          </button>
+
+          <!-- mobile menu button -->
+          <button id="menuBtn" class="md:hidden p-2 rounded-md hover:bg-slate-100 dark:hover:bg-slate-700">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div id="mobileMenu" class="hidden md:hidden bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
+        <div class="flex flex-col px-6 py-4 gap-2 text-sm">
+          <a href="#about" class="py-2">About</a>
+          <a href="#skills" class="py-2">Skills</a>
+          <a href="#projects" class="py-2">Projects</a>
+          <a href="#experience" class="py-2">Experience</a>
+          <a href="#education" class="py-2">Education</a>
+          <a href="#contact" class="py-2">Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="pt-20">
+      <!-- HERO -->
+      <section id="hero" class="max-w-6xl mx-auto px-6 py-16 lg:py-24">
+        <div class="grid md:grid-cols-2 gap-10 items-center">
+          <div class="space-y-4">
+            <p class="text-brand font-medium">Hello — I'm</p>
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight">Jaywant Muktapure</h1>
+            <br>
+            <p class="text-slate-600 dark:text-slate-300 font-semibold">Computer Engineering Student | AWS | Web Developer | DevOps | Prompt Engineering</p>
+
+            <p class="mt-4 text-slate-600 dark:text-slate-300">I build clean, responsive web interfaces and explore cloud solutions on AWS. Passionate about learning, problem-solving, and building impactful solutions through code. Currently pursuing my Engineering degree at Shivaji University, Kolhapur. Alongside web development and cloud, I’m continuously learning Data Structures & Algorithms (DSA), low-level design, and prompt engineering, while exploring new technologies to strengthen my foundation and stay ahead in the tech world. </p>
+            <div class="flex gap-3 mt-6">
+              <a href="#projects" class="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-brand text-white shadow hover:opacity-95">View Projects <i class="fa-solid fa-arrow-right ml-1"></i></a>
+              <a href="jaywant resume.pdf" download class="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-slate-200 dark:border-slate-700">Download Resume</a>
+            </div>
+
+            <div class="mt-6 flex flex-wrap gap-3 text-sm text-slate-600 dark:text-slate-300">
+              <div class="inline-flex items-center gap-2"><i class="fa-brands fa-github"></i> <a href="https://github.com/jaywantmuktapure" class="underline">github</a></div>
+              <div class="inline-flex items-center gap-2"><i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/jaywant-muktapure-307a35271/" class="underline">linkdln</a></div>
+            </div>
+          </div>
+
+          <div class="flex justify-center md:justify-end">
+            <div class="w-56 h-56 md:w-72 md:h-72 rounded-2xl overflow-hidden shadow-lg transform transition hover:scale-105">
+              <img src="jaywant muktapure.jpg" alt="Profile photo" class="w-full h-full object-cover" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT & TIMELINE -->
+      <section id="about" class="max-w-6xl mx-auto px-6 py-12">
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="md:col-span-2 space-y-4">
+            <h2 class="text-2xl font-bold">About Me</h2>
+            <p class="text-slate-600 dark:text-slate-300">Hi, I’m Jaywant Muktapure 👋 — a curious Computer Science student who loves solving problems with code and exploring the latest technologies.
+I’ve built a strong foundation in Data Structures & Algorithms (certified in DSA & Low-Level Design from CodeHelp) and explored the exciting world of AI Prompt Engineering. Along the way, I picked up tools like Git, GitHub, and Figma, making collaboration and creativity part of my workflow.
+Recently, I’ve started my DevOps journey, diving into Linux commands, Shell Scripting, AWS Cloud, and other DevOps tools. I believe in continuous learning, strong communication, and embracing challenges to grow both technically and personally. </p>
+
+            <div class="mt-6 grid sm:grid-cols-3 gap-4">
+              <div class="p-4 rounded-lg border border-slate-100 dark:border-slate-800">
+                <h3 class="font-semibold">Academic</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-300 mt-2">Strong communication and teamwork skills</p>
+                <p class="text-sm text-slate-600 dark:text-slate-300 mt-2"><p class="text-sm text-slate-600 dark:text-slate-300 mt-2">Quick learner with curiosity for new tools & technologies</p></p>
+                <p class="text-sm text-slate-600 dark:text-slate-300 mt-2"><p class="text-sm text-slate-600 dark:text-slate-300 mt-2">Strong foundation in Computer Science fundamentals</p></p>
+              </div>
+              <div class="p-4 rounded-lg border border-slate-100 dark:border-slate-800">
+                <h3 class="font-semibold">Strengths</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-300 mt-2">Quick Learner</p>
+                <p class="text-sm text-slate-600 dark:text-slate-300 mt-2">Consistency & Discipline</p>
+                <p class="text-sm text-slate-600 dark:text-slate-300 mt-2">Problem-Solving: Ability to approach challenges logically and find efficient solutions.</p>
+              </div>
+              <div class="p-4 rounded-lg border border-slate-100 dark:border-slate-800">
+                <h3 class="font-semibold">Interests</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-300 mt-2">DevOps & Cloud Computing – exploring tools, automation, and cloud services like AWS.</p>
+                <p class="text-sm text-slate-600 dark:text-slate-300 mt-2">Exploring New Experiences – passionate about challenges, new adventures, and personal growth.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline -->
+          <aside class="hidden md:block p-4">
+            <h3 class="font-semibold mb-4">Timeline</h3>
+            <ol class="relative border-l border-slate-200 dark:border-slate-700 ml-4">
+              <li class="mb-6 ml-6">
+                <span class="absolute -left-3 flex items-center justify-center w-6 h-6 rounded-full bg-brand text-white text-xs">23</span>
+                <h4 class="font-semibold">2025 — Present</h4>
+                <p class="text-sm text-slate-600 dark:text-slate-300">Engineering — Shivaji University, Kolhapur</p>
+                 <p class="text-sm text-slate-600 dark:text-slate-300">Started my Devops journey <b>Kali linux,</b> <b>Shell-scripting,</b> <b>AWS</b></p>
+              </li>
+
+              <li class="mb-6 ml-6">
+                <span class="absolute -left-3 flex items-center justify-center w-6 h-6 rounded-full bg-slate-400 text-white text-xs">22</span>
+                <h4 class="font-semibold">2024</h4>
+                <p class="text-sm text-slate-600 dark:text-slate-300">Focused on learning and practicing key skills: html, css, tailwindcss, communication, github and thinking about devops engineer as career options</p>
+              </li>
+
+               <li class="mb-6 ml-6">
+                <span class="absolute -left-3 flex items-center justify-center w-6 h-6 rounded-full bg-slate-400 text-white text-xs">22</span>
+                <h4 class="font-semibold">2023</h4>
+                <p class="text-sm text-slate-600 dark:text-slate-300">2023 — Started DSA using cppI start my DSA journey with CODEHLEP</p>
+              </li>
+               <li class="mb-6 ml-6">
+                <span class="absolute -left-3 flex items-center justify-center w-6 h-6 rounded-full bg-slate-400 text-white text-xs">22</span>
+                <h4 class="font-semibold">2022</h4>
+                <p class="text-sm text-slate-600 dark:text-slate-300">2022 — Started B.Tech in Computer science and Engineering Shivaji University, Kolhapur.</p>
+              </li>
+
+
+            </ol>
+          </aside>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills" class="max-w-6xl mx-auto px-6 py-12">
+        <h2 class="text-2xl font-bold">Skills</h2>
+        <p class="text-slate-600 dark:text-slate-300 mt-2">Categorized skills with quick proficiency bars — replace or tweak the percent values as needed.</p>
+
+        <div class="mt-6 grid md:grid-cols-2 gap-6">
+          <div class="space-y-4">
+            <h3 class="font-semibold">Programming</h3>
+            <!-- skill -->
+            <!-- <div>
+              <div class="flex justify-between text-sm"><span>C</span><span>85%</span></div>
+              <div class="w-full bg-slate-200 dark:bg-slate-800 rounded-full skill-bar mt-1"><div style="width:85%" class="bg-brand"></div></div>
+            </div> -->
+            <div>
+              <div class="flex justify-between text-sm"><span>C++</span><span>80%</span></div>
+              <div class="w-full bg-slate-200 dark:bg-slate-800 rounded-full skill-bar mt-1"><div style="width:80%" class="bg-brand"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm"><span>Java</span><span>75%</span></div>
+              <div class="w-full bg-slate-200 dark:bg-slate-800 rounded-full skill-bar mt-1"><div style="width:75%" class="bg-brand"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm"><span>Python</span><span>70%</span></div>
+              <div class="w-full bg-slate-200 dark:bg-slate-800 rounded-full skill-bar mt-1"><div style="width:70%" class="bg-brand"></div></div>
+            </div>
+          </div>
+
+          <div class="space-y-4">
+            <h3 class="font-semibold">Web & Cloud & Tools</h3>
+            <div>
+              <div class="flex justify-between text-sm"><span><b>AWS</b> = ( EC2 , IAM, ROUTE 53, load balancer, Auto scaling, s3, VPC, FSX, VPN )</span><span>90%</span></div>
+              <div class="w-full bg-slate-200 dark:bg-slate-800 rounded-full skill-bar mt-1"><div style="width:90%" class="bg-brand"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm"><span>HTML / CSS / Tailwindcss</span><span>85%</span></div>
+              <div class="w-full bg-slate-200 dark:bg-slate-800 rounded-full skill-bar mt-1"><div style="width:85%" class="bg-brand"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm"><span>JavaScript</span><span>65%</span></div>
+              <div class="w-full bg-slate-200 dark:bg-slate-800 rounded-full skill-bar mt-1"><div style="width:65%" class="bg-brand"></div></div>
+            </div>
+            
+            <div>
+              <div class="flex justify-between text-sm"><span>DSA / Git / Linux</span><span>70%</span></div>
+              <div class="w-full bg-slate-200 dark:bg-slate-800 rounded-full skill-bar mt-1"><div style="width:70%" class="bg-brand"></div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects" class="max-w-6xl mx-auto px-6 py-12">
+        <h2 class="text-2xl font-bold">Projects</h2>
+        <p class="text-slate-600 dark:text-slate-300 mt-2">A few projects — replace descriptions and screenshots with your actual work.</p>
+
+        <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Project Card -->
+          <article class="rounded-xl border border-slate-100 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-md transition">
+            <img src="project1.png" alt="project 1 screenshot" class="w-full h-40 object-cover" />
+            <div class="p-4">
+              <h3 class="font-semibold">Project One</h3>
+              <p class="text-sm text-slate-600 dark:text-slate-300 mt-2">In this project we manage the flight like book ticket edit schedule a time for flight etc</p>
+              <p class="mt-3 text-xs">Tech: CPP,MYSQL HTML, CSS, JS</p>
+              <div class="mt-4 flex items-center gap-3">
+                <a href="https://github.com/jaywantmuktapure/Airline-Reservation-System.git" class="text-sm underline">GitHub</a>
+                <!-- <a href="" class="text-sm underline">Live Demo</a> -->
+              </div>
+            </div>
+          </article>
+          
+
+          <article class="rounded-xl border border-slate-100 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-md transition">
+            <img src="alumni.jpg" alt="project 2 screenshot" class="w-full h-40 object-cover" />
+            <div class="p-4">
+              <h3 class="font-semibold">Project Two</h3>
+              <p class="text-sm text-slate-600 dark:text-slate-300 mt-2">In this project we manage guidence of alumni donation or use their connection to get the job interview as well as intership</p>
+              <p class="mt-3 text-xs">Tech: Java, Spring Boot, html, css</p>
+              <div class="mt-4 flex items-center gap-3">
+                <a href="https://github.com/jaywantmuktapure/Alumni-management-system.git" class="text-sm underline">GitHub</a>
+                <!-- <a href="https://github.com/jaywantmuktapure/Alumni-management-system.git" class="text-sm underline">Live Demo</a> -->
+              </div>
+            </div>
+          </article>
+
+          <article class="rounded-xl border border-slate-100 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-md transition">
+            <img src="study-sync-img.png" alt="project 3 screenshot" class="w-full h-40 object-cover" />
+            <div class="p-4">
+              <h3 class="font-semibold">Project Three</h3>
+              <p class="text-sm text-slate-600 dark:text-slate-300 mt-2">In this I just build simple web page with <b>HTML </b><b>CSS </b><b>tailwindcss </b></p>
+              <p class="mt-3 text-xs">Tech: HTML , CSS, TAILWINDCSS </p>
+              <div class="mt-4 flex items-center gap-3">
+                <a href="https://github.com/jaywantmuktapure/web-development-projects.git" class="text-sm underline">GitHub</a>
+                <!-- <a href="https://github.com/jaywantmuktapure/web-development-projects.git" class="text-sm underline">Live Demo</a> -->
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE / INTERNSHIPS -->
+      <section id="experience" class="max-w-6xl mx-auto px-6 py-12">
+        <h2 class="text-2xl font-bold">Experience & Internships</h2>
+        <p class="text-slate-600 dark:text-slate-300 mt-2">Roles, responsibilities, and achievements from internships, workshops, and hackathons.</p>
+
+        <div class="mt-6 grid md:grid-cols-2 gap-6">
+          <div class="p-4 border rounded-lg">
+            <h3 class="font-semibold">Intern — YBI foundation</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-300 mt-2">Responsible for cleaning, preprocessing, and analyzing structured/unstructured data..</p>
+            <ul class="list-disc list-inside text-sm mt-3 text-slate-600 dark:text-slate-300">
+              <li>Learned the basics of Data Science and Machine Learning.</li>
+              <li>Understood how real-world datasets are handled and analyzed.</li>
+              <li>Practiced data cleaning, preprocessing, and visualization using Python..</li>
+            </ul>
+          </div>
+
+          <!-- <div class="p-4 border rounded-lg">
+            <h3 class="font-semibold">Hackathons & Workshops</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-300 mt-2">Participated in multiple hackathons and workshops focusing on web dev and cloud.</p>
+            <ul class="list-disc list-inside text-sm mt-3 text-slate-600 dark:text-slate-300">
+              <li>2nd place — XYZ Hackathon</li>
+              <li>Attended AWS workshop</li>
+            </ul>
+          </div> -->
+
+        </div>
+      </section>
+
+      <!-- EDUCATION & CERTIFICATIONS -->
+      <section id="education" class="max-w-6xl mx-auto px-6 py-12">
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <h2 class="text-2xl font-bold">Education</h2>
+            <div class="mt-4 p-4 border rounded-lg">
+              <h3 class="font-semibold">Bachelor of Technology (B.Tech) in Computer Science</h3>
+              <p class="text-sm text-slate-600 dark:text-slate-300">Shivaji University, Kolhapur | 2022 – 2026 (Pursuing)</p>
+              <br>
+               <h3 class="font-semibold">Higher Secondary Certificate (12th – Science)</h3>
+              <p class="text-sm text-slate-600 dark:text-slate-300">Dr. Chandrabanu Sonwane College, Latur | 2020 – 2022</p>
+              <p class="text-sm text-slate-600 dark:text-slate-300">Percentage: 71.83%</p>
+              <br>
+
+              <h3 class="font-semibold">Secondary School Certificate (10th)</h3>
+              <p class="text-sm text-slate-600 dark:text-slate-300">Shri Marwadi Rajasthan Vidyalay, Latur | 2020</p>
+              <p class="text-sm text-slate-600 dark:text-slate-300">Percentage: 90%</p>
+              <ul class="list-disc list-inside text-sm mt-3 text-slate-600 dark:text-slate-300">
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-bold">Certifications</h2>
+            <div class="mt-4 p-4 border rounded-lg">
+              <h3 class="font-semibold">1. Data Sructure and Algorithms</h3>
+              <p class="text-sm text-slate-600 dark:text-slate-300 mt-2"><a href="jay dsa.png">--> Data Structures and Algorithms</a></p>
+
+              <h3 class="font-semibold">2. Low Level design </h3>
+              <p class="text-sm text-slate-600 dark:text-slate-300 mt-2"><a href="low level design.jpg">--> Low Level Design</a></p>
+
+              <h3 class="font-semibold">3. Prompt Engineering </h3>
+              <p class="text-sm text-slate-600 dark:text-slate-300 mt-2"><a href="prompt-engineering.pdf">--> Prompt engineering</a></p>
+
+              
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ACHIEVEMENTS + BLOG -->
+      <section id="achievements" class="max-w-6xl mx-auto px-6 py-12">
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <h2 class="text-2xl font-bold">Achievements</h2>
+            <ul class="list-disc list-inside text-slate-600 dark:text-slate-300 mt-4 text-sm">
+              <li>Secured 1st Prize in Lakshya 2023 for successfully clearing Aptitude Test, Group Discussion, and HR Round at college-level competition.”</li>
+              <!-- <li></li>
+              <li></li> -->
+            </ul>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-bold">Blog / Articles</h2>
+            <p class="text-slate-600 dark:text-slate-300 mt-4 text-sm">Planning to write articles about web development, cloud, and interview prep. Add links here once live (LinkedIn/Medium).</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="max-w-6xl mx-auto px-6 py-12">
+        <h2 class="text-2xl font-bold">Contact</h2>
+        <p class="text-slate-600 dark:text-slate-300 mt-2">Reach out for internships, projects, or collaboration.</p>
+
+        <div class="mt-6 grid md:grid-cols-2 gap-6">
+          <div class="p-4 border rounded-lg">
+            <h3 class="font-semibold">Get in touch</h3>
+            <p class="mt-3 text-sm text-slate-600 dark:text-slate-300"><i class="fa-solid fa-envelope"></i> Email: <a href="mailto:jaywantmuktapure0@gmail.com" class="underline">jaywantmuktapure0@gmail.com</a></p>
+            <p class="mt-2 text-sm text-slate-600 dark:text-slate-300"><i class="fa-solid fa-phone"></i> Mobile: <a href="tel:8625941287" class="underline">8625941287</a></p>
+            <p class="mt-2 text-sm text-slate-600 dark:text-slate-300"><i class="fa-brands fa-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/in/jaywant-muktapure-307a35271/" class="underline">linkedin</a></p>
+            <p class="mt-2 text-sm text-slate-600 dark:text-slate-300"><i class="fa-brands fa-github"></i> GitHub: <a href="https://github.com/jaywantmuktapure" class="underline">github</a></p>
+
+            <div class="mt-4">
+              <a href="jaywant resume.pdf" download class="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-brand text-white">Download Resume</a>
+            </div>
+
+            <div class="mt-6 flex gap-3 text-sm text-slate-600 dark:text-slate-300">
+              <a href="https://leetcode.com/u/Jay_om/" class="underline">LeetCode</a>
+              <!-- <a href="#" class="underline">HackerRank</a>
+              <a href="#" class="underline">Codeforces</a> -->
+            </div>
+          </div>
+
+          <div class="p-4 border rounded-lg">
+            <h3 class="font-semibold">Contact Form</h3>
+            <!-- The form is optional; this is a static form (replace action with your backend) -->
+            <form action="#" method="POST" class="mt-3 space-y-3">
+              <input name="name" placeholder="Your name" class="w-full p-2 rounded border border-slate-200 dark:border-slate-700 bg-transparent" />
+              <input name="email" placeholder="Your email" class="w-full p-2 rounded border border-slate-200 dark:border-slate-700 bg-transparent" />
+              <textarea name="message" rows="4" placeholder="Message" class="w-full p-2 rounded border border-slate-200 dark:border-slate-700 bg-transparent"></textarea>
+              <button type="submit" class="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-brand text-white">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="border-t border-slate-100 dark:border-slate-800 mt-12">
+        <div class="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p class="text-sm">© <span id="year"></span> Jaywant Muktapure — All rights reserved.</p>
+          <div class="text-sm text-slate-600 dark:text-slate-300">Built with ❤️ • <a href="#" class="underline">GitHub</a></div>
+        </div>
+      </footer>
+    </main>
+
+    <script>
+      // year
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // mobile menu toggle
+      const menuBtn = document.getElementById('menuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+      // theme toggle (persist in localStorage)
+      const themeToggle = document.getElementById('themeToggle');
+      const themeIcon = document.getElementById('themeIcon');
+      const root = document.documentElement;
+
+      function setTheme(dark) {
+        if (dark) document.documentElement.classList.add('dark');
+        else document.documentElement.classList.remove('dark');
+        themeIcon.className = dark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+      }
+
+      const saved = localStorage.getItem('prefers-dark');
+      if (saved === null) {
+        // default to match system
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        setTheme(prefersDark);
+      } else setTheme(saved === 'true');
+
+      themeToggle.addEventListener('click', () => {
+        const isDark = document.documentElement.classList.toggle('dark');
+        localStorage.setItem('prefers-dark', isDark);
+        setTheme(isDark);
+      });
+
+      // small entrance animations using IntersectionObserver
+      const anims = document.querySelectorAll('section');
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add('animate-fadeIn');
+        });
+      }, { threshold: 0.12 });
+      anims.forEach(s => io.observe(s));
+
+      // add simple keyframes utility via style tag
+      const style = document.createElement('style');
+      style.innerHTML = `@keyframes fadeIn { from { opacity: 0; transform: translateY(12px) } to { opacity: 1; transform: translateY(0) } } .animate-fadeIn { animation: fadeIn 600ms ease forwards }`;
+      document.head.appendChild(style);
+    </script>
+  </body>
+</html>
